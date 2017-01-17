@@ -1,0 +1,111 @@
+2016-12-12 10:06:33  [ main:0 ] - [ DEBUG ]  This is debug message.
+2016-12-12 10:06:33  [ main:0 ] - [ INFO ]  This is info message.
+2016-12-12 10:06:33  [ main:0 ] - [ ERROR ]  This is error message.
+2016-12-12 10:06:33  [ main:31 ] - [ DEBUG ]  Using Log4J as the default logging framework
+2016-12-12 10:06:33  [ main:31 ] - [ DEBUG ]  -Dio.netty.eventLoopThreads: 8
+2016-12-12 10:06:33  [ main:100 ] - [ DEBUG ]  java.nio.Buffer.address: available
+2016-12-12 10:06:33  [ main:100 ] - [ DEBUG ]  sun.misc.Unsafe.theUnsafe: available
+2016-12-12 10:06:33  [ main:100 ] - [ DEBUG ]  sun.misc.Unsafe.copyMemory: available
+2016-12-12 10:06:33  [ main:100 ] - [ DEBUG ]  java.nio.Bits.unaligned: true
+2016-12-12 10:06:33  [ main:100 ] - [ DEBUG ]  Platform: Windows
+2016-12-12 10:06:33  [ main:100 ] - [ DEBUG ]  Java version: 8
+2016-12-12 10:06:33  [ main:100 ] - [ DEBUG ]  -Dio.netty.noUnsafe: false
+2016-12-12 10:06:33  [ main:100 ] - [ DEBUG ]  sun.misc.Unsafe: available
+2016-12-12 10:06:33  [ main:100 ] - [ DEBUG ]  -Dio.netty.noJavassist: false
+2016-12-12 10:06:33  [ main:100 ] - [ DEBUG ]  Javassist: unavailable
+2016-12-12 10:06:33  [ main:100 ] - [ DEBUG ]  You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2016-12-12 10:06:33  [ main:100 ] - [ DEBUG ]  -Dio.netty.tmpdir: C:\Users\jiax\AppData\Local\Temp (java.io.tmpdir)
+2016-12-12 10:06:33  [ main:100 ] - [ DEBUG ]  -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2016-12-12 10:06:33  [ main:100 ] - [ DEBUG ]  -Dio.netty.noPreferDirect: false
+2016-12-12 10:06:33  [ main:100 ] - [ DEBUG ]  -Dio.netty.noKeySetOptimization: false
+2016-12-12 10:06:33  [ main:116 ] - [ DEBUG ]  -Dio.netty.selectorAutoRebuildThreshold: 512
+2016-12-12 10:06:33  [ main:268 ] - [ DEBUG ]  -Dio.netty.processId: 8120 (auto-detected)
+2016-12-12 10:06:33  [ main:470 ] - [ DEBUG ]  -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+2016-12-12 10:06:33  [ main:470 ] - [ DEBUG ]  -Dio.netty.initialSeedUniquifier: 0x0c16306364368ef1 (took 25 ms)
+2016-12-12 10:06:33  [ main:517 ] - [ DEBUG ]  -Dio.netty.allocator.numHeapArenas: 4
+2016-12-12 10:06:33  [ main:517 ] - [ DEBUG ]  -Dio.netty.allocator.numDirectArenas: 4
+2016-12-12 10:06:33  [ main:517 ] - [ DEBUG ]  -Dio.netty.allocator.pageSize: 8192
+2016-12-12 10:06:33  [ main:517 ] - [ DEBUG ]  -Dio.netty.allocator.maxOrder: 11
+2016-12-12 10:06:33  [ main:517 ] - [ DEBUG ]  -Dio.netty.allocator.chunkSize: 16777216
+2016-12-12 10:06:33  [ main:517 ] - [ DEBUG ]  -Dio.netty.allocator.tinyCacheSize: 512
+2016-12-12 10:06:33  [ main:517 ] - [ DEBUG ]  -Dio.netty.allocator.smallCacheSize: 256
+2016-12-12 10:06:33  [ main:517 ] - [ DEBUG ]  -Dio.netty.allocator.normalCacheSize: 64
+2016-12-12 10:06:33  [ main:517 ] - [ DEBUG ]  -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2016-12-12 10:06:33  [ main:517 ] - [ DEBUG ]  -Dio.netty.allocator.cacheTrimInterval: 8192
+2016-12-12 10:06:34  [ main:532 ] - [ DEBUG ]  -Dio.netty.allocator.type: pooled
+2016-12-12 10:06:34  [ main:532 ] - [ DEBUG ]  -Dio.netty.threadLocalDirectBufferSize: 65536
+2016-12-12 10:06:34  [ main:717 ] - [ DEBUG ]  Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+2016-12-12 10:06:34  [ main:717 ] - [ DEBUG ]  \proc\sys\net\core\somaxconn: 200 (non-existent)
+2016-12-12 10:06:51  [ main:0 ] - [ DEBUG ]  Using Log4J as the default logging framework
+2016-12-12 10:06:51  [ main:32 ] - [ DEBUG ]  -Dio.netty.eventLoopThreads: 8
+2016-12-12 10:06:52  [ main:265 ] - [ DEBUG ]  java.nio.Buffer.address: available
+2016-12-12 10:06:52  [ main:265 ] - [ DEBUG ]  sun.misc.Unsafe.theUnsafe: available
+2016-12-12 10:06:52  [ main:265 ] - [ DEBUG ]  sun.misc.Unsafe.copyMemory: available
+2016-12-12 10:06:52  [ main:266 ] - [ DEBUG ]  java.nio.Bits.unaligned: true
+2016-12-12 10:06:52  [ main:267 ] - [ DEBUG ]  Platform: Windows
+2016-12-12 10:06:52  [ main:268 ] - [ DEBUG ]  Java version: 8
+2016-12-12 10:06:52  [ main:269 ] - [ DEBUG ]  -Dio.netty.noUnsafe: false
+2016-12-12 10:06:52  [ main:270 ] - [ DEBUG ]  sun.misc.Unsafe: available
+2016-12-12 10:06:52  [ main:271 ] - [ DEBUG ]  -Dio.netty.noJavassist: false
+2016-12-12 10:06:52  [ main:275 ] - [ DEBUG ]  Javassist: unavailable
+2016-12-12 10:06:52  [ main:275 ] - [ DEBUG ]  You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2016-12-12 10:06:52  [ main:275 ] - [ DEBUG ]  -Dio.netty.tmpdir: C:\Users\jiax\AppData\Local\Temp (java.io.tmpdir)
+2016-12-12 10:06:52  [ main:277 ] - [ DEBUG ]  -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2016-12-12 10:06:52  [ main:277 ] - [ DEBUG ]  -Dio.netty.noPreferDirect: false
+2016-12-12 10:06:52  [ main:279 ] - [ DEBUG ]  -Dio.netty.noKeySetOptimization: false
+2016-12-12 10:06:52  [ main:279 ] - [ DEBUG ]  -Dio.netty.selectorAutoRebuildThreshold: 512
+2016-12-12 10:06:52  [ main:840 ] - [ DEBUG ]  -Dio.netty.processId: 1888 (auto-detected)
+2016-12-12 10:06:53  [ main:1142 ] - [ DEBUG ]  -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+2016-12-12 10:06:53  [ main:1146 ] - [ DEBUG ]  -Dio.netty.initialSeedUniquifier: 0xdbefa342f8074478 (took 165 ms)
+2016-12-12 10:06:53  [ main:1264 ] - [ DEBUG ]  -Dio.netty.allocator.numHeapArenas: 4
+2016-12-12 10:06:53  [ main:1264 ] - [ DEBUG ]  -Dio.netty.allocator.numDirectArenas: 4
+2016-12-12 10:06:53  [ main:1264 ] - [ DEBUG ]  -Dio.netty.allocator.pageSize: 8192
+2016-12-12 10:06:53  [ main:1264 ] - [ DEBUG ]  -Dio.netty.allocator.maxOrder: 11
+2016-12-12 10:06:53  [ main:1264 ] - [ DEBUG ]  -Dio.netty.allocator.chunkSize: 16777216
+2016-12-12 10:06:53  [ main:1264 ] - [ DEBUG ]  -Dio.netty.allocator.tinyCacheSize: 512
+2016-12-12 10:06:53  [ main:1264 ] - [ DEBUG ]  -Dio.netty.allocator.smallCacheSize: 256
+2016-12-12 10:06:53  [ main:1264 ] - [ DEBUG ]  -Dio.netty.allocator.normalCacheSize: 64
+2016-12-12 10:06:53  [ main:1264 ] - [ DEBUG ]  -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2016-12-12 10:06:53  [ main:1264 ] - [ DEBUG ]  -Dio.netty.allocator.cacheTrimInterval: 8192
+2016-12-12 10:06:53  [ main:1280 ] - [ DEBUG ]  -Dio.netty.allocator.type: pooled
+2016-12-12 10:06:53  [ main:1280 ] - [ DEBUG ]  -Dio.netty.threadLocalDirectBufferSize: 65536
+2016-12-12 10:06:53  [ nioEventLoopGroup-0-0:1355 ] - [ DEBUG ]  -Dio.netty.leakDetectionLevel: simple
+2016-12-12 10:06:53  [ nioEventLoopGroup-0-0:1402 ] - [ DEBUG ]  -Dio.netty.recycler.maxCapacity: 262144
+2016-12-12 10:06:53  [ nioEventLoopGroup-1-0:19855 ] - [ DEBUG ]  -Dio.netty.leakDetectionLevel: simple
+2016-12-12 10:06:53  [ nioEventLoopGroup-1-0:19873 ] - [ DEBUG ]  -Dio.netty.recycler.maxCapacity: 262144
+2016-12-12 10:20:53  [ main:0 ] - [ DEBUG ]  Using Log4J as the default logging framework
+2016-12-12 10:20:53  [ main:16 ] - [ DEBUG ]  -Dio.netty.eventLoopThreads: 8
+2016-12-12 10:20:53  [ main:213 ] - [ DEBUG ]  java.nio.Buffer.address: available
+2016-12-12 10:20:53  [ main:214 ] - [ DEBUG ]  sun.misc.Unsafe.theUnsafe: available
+2016-12-12 10:20:53  [ main:214 ] - [ DEBUG ]  sun.misc.Unsafe.copyMemory: available
+2016-12-12 10:20:53  [ main:215 ] - [ DEBUG ]  java.nio.Bits.unaligned: true
+2016-12-12 10:20:53  [ main:217 ] - [ DEBUG ]  Platform: Windows
+2016-12-12 10:20:53  [ main:217 ] - [ DEBUG ]  Java version: 8
+2016-12-12 10:20:53  [ main:218 ] - [ DEBUG ]  -Dio.netty.noUnsafe: false
+2016-12-12 10:20:53  [ main:218 ] - [ DEBUG ]  sun.misc.Unsafe: available
+2016-12-12 10:20:53  [ main:218 ] - [ DEBUG ]  -Dio.netty.noJavassist: false
+2016-12-12 10:20:53  [ main:220 ] - [ DEBUG ]  Javassist: unavailable
+2016-12-12 10:20:53  [ main:220 ] - [ DEBUG ]  You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2016-12-12 10:20:53  [ main:221 ] - [ DEBUG ]  -Dio.netty.tmpdir: C:\Users\jiax\AppData\Local\Temp (java.io.tmpdir)
+2016-12-12 10:20:53  [ main:221 ] - [ DEBUG ]  -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2016-12-12 10:20:53  [ main:222 ] - [ DEBUG ]  -Dio.netty.noPreferDirect: false
+2016-12-12 10:20:53  [ main:223 ] - [ DEBUG ]  -Dio.netty.noKeySetOptimization: false
+2016-12-12 10:20:53  [ main:223 ] - [ DEBUG ]  -Dio.netty.selectorAutoRebuildThreshold: 512
+2016-12-12 10:20:53  [ main:478 ] - [ DEBUG ]  -Dio.netty.processId: 5216 (auto-detected)
+2016-12-12 10:20:54  [ main:741 ] - [ DEBUG ]  -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+2016-12-12 10:20:54  [ main:741 ] - [ DEBUG ]  -Dio.netty.initialSeedUniquifier: 0x8cfed4282bd979c7 (took 189 ms)
+2016-12-12 10:20:54  [ main:826 ] - [ DEBUG ]  -Dio.netty.allocator.numHeapArenas: 4
+2016-12-12 10:20:54  [ main:826 ] - [ DEBUG ]  -Dio.netty.allocator.numDirectArenas: 4
+2016-12-12 10:20:54  [ main:826 ] - [ DEBUG ]  -Dio.netty.allocator.pageSize: 8192
+2016-12-12 10:20:54  [ main:826 ] - [ DEBUG ]  -Dio.netty.allocator.maxOrder: 11
+2016-12-12 10:20:54  [ main:826 ] - [ DEBUG ]  -Dio.netty.allocator.chunkSize: 16777216
+2016-12-12 10:20:54  [ main:826 ] - [ DEBUG ]  -Dio.netty.allocator.tinyCacheSize: 512
+2016-12-12 10:20:54  [ main:826 ] - [ DEBUG ]  -Dio.netty.allocator.smallCacheSize: 256
+2016-12-12 10:20:54  [ main:826 ] - [ DEBUG ]  -Dio.netty.allocator.normalCacheSize: 64
+2016-12-12 10:20:54  [ main:826 ] - [ DEBUG ]  -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2016-12-12 10:20:54  [ main:826 ] - [ DEBUG ]  -Dio.netty.allocator.cacheTrimInterval: 8192
+2016-12-12 10:20:54  [ main:841 ] - [ DEBUG ]  -Dio.netty.allocator.type: pooled
+2016-12-12 10:20:54  [ main:841 ] - [ DEBUG ]  -Dio.netty.threadLocalDirectBufferSize: 65536
+2016-12-12 10:20:54  [ nioEventLoopGroup-0-0:895 ] - [ DEBUG ]  -Dio.netty.leakDetectionLevel: simple
+2016-12-12 10:20:54  [ nioEventLoopGroup-0-0:926 ] - [ DEBUG ]  -Dio.netty.recycler.maxCapacity: 262144
+2016-12-12 10:21:01  [ threadDeathWatcher-2-1:8018 ] - [ DEBUG ]  Freed 2 thread-local buffer(s) from thread: nioEventLoopGroup-0-0

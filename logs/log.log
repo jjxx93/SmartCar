@@ -1,0 +1,97 @@
+2016-12-15 22:41:18  [ main:0 ] - [ DEBUG ]  This is debug message.
+2016-12-15 22:41:18  [ main:7 ] - [ INFO ]  This is info message.
+2016-12-15 22:41:18  [ main:7 ] - [ ERROR ]  This is error message.
+2016-12-15 22:41:27  [ main:0 ] - [ DEBUG ]  This is debug message.
+2016-12-15 22:41:27  [ main:1 ] - [ INFO ]  This is info message.
+2016-12-15 22:41:27  [ main:1 ] - [ ERROR ]  This is error message.
+2016-12-15 22:42:11  [ main:0 ] - [ DEBUG ]  This is debug message.
+2016-12-15 22:42:11  [ main:1 ] - [ INFO ]  This is info message.
+2016-12-15 22:42:11  [ main:1 ] - [ ERROR ]  This is error message.
+2016-12-15 22:42:11  [ main:151 ] - [ DEBUG ]  Using Log4J as the default logging framework
+2016-12-15 22:42:11  [ main:184 ] - [ DEBUG ]  -Dio.netty.eventLoopThreads: 8
+2016-12-15 22:42:11  [ main:483 ] - [ DEBUG ]  java.nio.Buffer.address: available
+2016-12-15 22:42:11  [ main:483 ] - [ DEBUG ]  sun.misc.Unsafe.theUnsafe: available
+2016-12-15 22:42:11  [ main:484 ] - [ DEBUG ]  sun.misc.Unsafe.copyMemory: available
+2016-12-15 22:42:11  [ main:485 ] - [ DEBUG ]  java.nio.Bits.unaligned: true
+2016-12-15 22:42:11  [ main:485 ] - [ DEBUG ]  Platform: Windows
+2016-12-15 22:42:11  [ main:486 ] - [ DEBUG ]  Java version: 8
+2016-12-15 22:42:11  [ main:488 ] - [ DEBUG ]  -Dio.netty.noUnsafe: false
+2016-12-15 22:42:11  [ main:489 ] - [ DEBUG ]  sun.misc.Unsafe: available
+2016-12-15 22:42:11  [ main:489 ] - [ DEBUG ]  -Dio.netty.noJavassist: false
+2016-12-15 22:42:11  [ main:491 ] - [ DEBUG ]  Javassist: unavailable
+2016-12-15 22:42:11  [ main:491 ] - [ DEBUG ]  You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2016-12-15 22:42:11  [ main:491 ] - [ DEBUG ]  -Dio.netty.tmpdir: C:\Users\jiax\AppData\Local\Temp (java.io.tmpdir)
+2016-12-15 22:42:11  [ main:492 ] - [ DEBUG ]  -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2016-12-15 22:42:11  [ main:493 ] - [ DEBUG ]  -Dio.netty.noPreferDirect: false
+2016-12-15 22:42:11  [ main:494 ] - [ DEBUG ]  -Dio.netty.noKeySetOptimization: false
+2016-12-15 22:42:11  [ main:495 ] - [ DEBUG ]  -Dio.netty.selectorAutoRebuildThreshold: 512
+2016-12-15 22:42:12  [ main:1017 ] - [ DEBUG ]  -Dio.netty.processId: 8204 (auto-detected)
+2016-12-15 22:42:12  [ main:1273 ] - [ DEBUG ]  -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+2016-12-15 22:42:12  [ main:1276 ] - [ DEBUG ]  -Dio.netty.initialSeedUniquifier: 0x870621b02a5a9618 (took 240 ms)
+2016-12-15 22:42:12  [ main:1379 ] - [ DEBUG ]  -Dio.netty.allocator.numHeapArenas: 4
+2016-12-15 22:42:12  [ main:1379 ] - [ DEBUG ]  -Dio.netty.allocator.numDirectArenas: 4
+2016-12-15 22:42:12  [ main:1379 ] - [ DEBUG ]  -Dio.netty.allocator.pageSize: 8192
+2016-12-15 22:42:12  [ main:1379 ] - [ DEBUG ]  -Dio.netty.allocator.maxOrder: 11
+2016-12-15 22:42:12  [ main:1379 ] - [ DEBUG ]  -Dio.netty.allocator.chunkSize: 16777216
+2016-12-15 22:42:12  [ main:1379 ] - [ DEBUG ]  -Dio.netty.allocator.tinyCacheSize: 512
+2016-12-15 22:42:12  [ main:1379 ] - [ DEBUG ]  -Dio.netty.allocator.smallCacheSize: 256
+2016-12-15 22:42:12  [ main:1379 ] - [ DEBUG ]  -Dio.netty.allocator.normalCacheSize: 64
+2016-12-15 22:42:12  [ main:1380 ] - [ DEBUG ]  -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2016-12-15 22:42:12  [ main:1380 ] - [ DEBUG ]  -Dio.netty.allocator.cacheTrimInterval: 8192
+2016-12-15 22:42:12  [ main:1401 ] - [ DEBUG ]  -Dio.netty.allocator.type: pooled
+2016-12-15 22:42:12  [ main:1401 ] - [ DEBUG ]  -Dio.netty.threadLocalDirectBufferSize: 65536
+2016-12-15 22:42:12  [ main:1726 ] - [ DEBUG ]  Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+2016-12-15 22:42:12  [ main:1727 ] - [ DEBUG ]  \proc\sys\net\core\somaxconn: 200 (non-existent)
+2016-12-15 22:42:36  [ main:0 ] - [ DEBUG ]  This is debug message.
+2016-12-15 22:42:36  [ main:24 ] - [ INFO ]  This is info message.
+2016-12-15 22:42:36  [ main:24 ] - [ ERROR ]  This is error message.
+2016-12-15 22:42:46  [ main:1 ] - [ DEBUG ]  This is debug message.
+2016-12-15 22:42:46  [ main:1 ] - [ INFO ]  This is info message.
+2016-12-15 22:42:46  [ main:2 ] - [ ERROR ]  This is error message.
+2016-12-15 22:42:56  [ main:0 ] - [ DEBUG ]  This is debug message.
+2016-12-15 22:42:56  [ main:1 ] - [ INFO ]  This is info message.
+2016-12-15 22:42:56  [ main:1 ] - [ ERROR ]  This is error message.
+2016-12-15 22:47:04  [ main:0 ] - [ DEBUG ]  This is debug message.
+2016-12-15 22:47:04  [ main:1 ] - [ INFO ]  This is info message.
+2016-12-15 22:47:04  [ main:1 ] - [ ERROR ]  This is error message.
+2016-12-15 22:47:04  [ main:148 ] - [ DEBUG ]  Using Log4J as the default logging framework
+2016-12-15 22:47:04  [ main:173 ] - [ DEBUG ]  -Dio.netty.eventLoopThreads: 8
+2016-12-15 22:47:04  [ main:362 ] - [ DEBUG ]  java.nio.Buffer.address: available
+2016-12-15 22:47:04  [ main:365 ] - [ DEBUG ]  sun.misc.Unsafe.theUnsafe: available
+2016-12-15 22:47:04  [ main:366 ] - [ DEBUG ]  sun.misc.Unsafe.copyMemory: available
+2016-12-15 22:47:04  [ main:367 ] - [ DEBUG ]  java.nio.Bits.unaligned: true
+2016-12-15 22:47:04  [ main:370 ] - [ DEBUG ]  Platform: Windows
+2016-12-15 22:47:04  [ main:371 ] - [ DEBUG ]  Java version: 8
+2016-12-15 22:47:04  [ main:371 ] - [ DEBUG ]  -Dio.netty.noUnsafe: false
+2016-12-15 22:47:04  [ main:371 ] - [ DEBUG ]  sun.misc.Unsafe: available
+2016-12-15 22:47:04  [ main:372 ] - [ DEBUG ]  -Dio.netty.noJavassist: false
+2016-12-15 22:47:04  [ main:375 ] - [ DEBUG ]  Javassist: unavailable
+2016-12-15 22:47:04  [ main:376 ] - [ DEBUG ]  You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2016-12-15 22:47:04  [ main:380 ] - [ DEBUG ]  -Dio.netty.tmpdir: C:\Users\jiax\AppData\Local\Temp (java.io.tmpdir)
+2016-12-15 22:47:04  [ main:381 ] - [ DEBUG ]  -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2016-12-15 22:47:04  [ main:381 ] - [ DEBUG ]  -Dio.netty.noPreferDirect: false
+2016-12-15 22:47:04  [ main:382 ] - [ DEBUG ]  -Dio.netty.noKeySetOptimization: false
+2016-12-15 22:47:04  [ main:383 ] - [ DEBUG ]  -Dio.netty.selectorAutoRebuildThreshold: 512
+2016-12-15 22:47:04  [ main:817 ] - [ DEBUG ]  -Dio.netty.processId: 6196 (auto-detected)
+2016-12-15 22:47:05  [ main:1127 ] - [ DEBUG ]  -Dio.netty.machineId: 00:00:00:00:00:00:00:e0 (auto-detected)
+2016-12-15 22:47:05  [ main:1131 ] - [ DEBUG ]  -Dio.netty.initialSeedUniquifier: 0x0ad0354061828b7c (took 80 ms)
+2016-12-15 22:47:05  [ main:1221 ] - [ DEBUG ]  -Dio.netty.allocator.numHeapArenas: 4
+2016-12-15 22:47:05  [ main:1222 ] - [ DEBUG ]  -Dio.netty.allocator.numDirectArenas: 4
+2016-12-15 22:47:05  [ main:1222 ] - [ DEBUG ]  -Dio.netty.allocator.pageSize: 8192
+2016-12-15 22:47:05  [ main:1222 ] - [ DEBUG ]  -Dio.netty.allocator.maxOrder: 11
+2016-12-15 22:47:05  [ main:1222 ] - [ DEBUG ]  -Dio.netty.allocator.chunkSize: 16777216
+2016-12-15 22:47:05  [ main:1222 ] - [ DEBUG ]  -Dio.netty.allocator.tinyCacheSize: 512
+2016-12-15 22:47:05  [ main:1222 ] - [ DEBUG ]  -Dio.netty.allocator.smallCacheSize: 256
+2016-12-15 22:47:05  [ main:1222 ] - [ DEBUG ]  -Dio.netty.allocator.normalCacheSize: 64
+2016-12-15 22:47:05  [ main:1223 ] - [ DEBUG ]  -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2016-12-15 22:47:05  [ main:1223 ] - [ DEBUG ]  -Dio.netty.allocator.cacheTrimInterval: 8192
+2016-12-15 22:47:05  [ main:1244 ] - [ DEBUG ]  -Dio.netty.allocator.type: pooled
+2016-12-15 22:47:05  [ main:1244 ] - [ DEBUG ]  -Dio.netty.threadLocalDirectBufferSize: 65536
+2016-12-15 22:47:05  [ main:1639 ] - [ DEBUG ]  Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+2016-12-15 22:47:05  [ main:1639 ] - [ DEBUG ]  \proc\sys\net\core\somaxconn: 200 (non-existent)
+2016-12-15 22:47:16  [ main:0 ] - [ DEBUG ]  This is debug message.
+2016-12-15 22:47:16  [ main:3 ] - [ INFO ]  This is info message.
+2016-12-15 22:47:16  [ main:3 ] - [ ERROR ]  This is error message.
+2016-12-15 22:48:13  [ main:0 ] - [ DEBUG ]  This is debug message.
+2016-12-15 22:48:13  [ main:1 ] - [ INFO ]  This is info message.
+2016-12-15 22:48:13  [ main:1 ] - [ ERROR ]  This is error message.
