@@ -9,11 +9,14 @@ import java.io.UnsupportedEncodingException;
 import java.time.LocalDateTime;
 
 /**
- * Created by jiax on 2016/12/6.
+ * 时间服务处理类
+ * Created by jjxx9 on 2017/2/14.
  */
-public class ServerHandler extends ChannelHandlerAdapter {
+public class TimeServerHandler extends ChannelHandlerAdapter{
+
+    // 接收到客户端信息后的处理函数
     @Override
-    public void channelRead(ChannelHandlerContext ctx, Object msg) {
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         System.out.println(ctx.name());
         ByteBuf buf = (ByteBuf)msg;
         byte[] req = new byte[buf.readableBytes()];
@@ -29,14 +32,15 @@ public class ServerHandler extends ChannelHandlerAdapter {
         }
     }
 
+     // 客户端消息读取完毕，channelRead()执行完成
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) {
         ctx.flush();
     }   // 将待发送消息写入SocketChannel
 
+    // 发生异常时的处理函数
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         ctx.close();    // 发生异常时，关闭ChannelHandlerContext
     }
 }
-

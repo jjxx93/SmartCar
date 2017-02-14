@@ -50,6 +50,6 @@ public class Client {
         String localHost = "127.0.0.1";
 
         new KeyHandler().start();
-        new Client().connect(port, serverIp);
+        new Client().connect(port, localHost);
     }
 }

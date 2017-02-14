@@ -26,12 +26,8 @@ public class Main {
         logger.error("This is error message.");
 
         // 启动按键命令处理
-//        new KeyHandler().start();
-//        // 启动服务器
-//        new Server().bind(port);
-        int i = 0;
-        while(i++<100){
-            System.out.println("/qiang");
-        }
+        new KeyHandler().start();
+        // 启动服务器
+        new Server().bind(port, new TimeServerHandler());
     }
 }
