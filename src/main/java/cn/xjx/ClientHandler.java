@@ -2,10 +2,13 @@ package cn.xjx;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
+import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 
 import java.io.UnsupportedEncodingException;
+import java.util.concurrent.Future;
 import java.util.logging.Logger;
 
 /**
@@ -25,7 +28,8 @@ public class ClientHandler extends ChannelHandlerAdapter {
     //    客户端和服务端TCP链路建立成功后，调用channelActive方法
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
-        ctx.writeAndFlush(firstMessage);
+        ChannelFuture f = ctx.writeAndFlush(firstMessage);
+        new KeyHandler(ctx).start();    // 启动按键处理线程
     }
 
     //    当服务器返回应答信息时调用
@@ -36,10 +40,11 @@ public class ClientHandler extends ChannelHandlerAdapter {
         buf.readBytes(req);             // 读取返回信息
         try {
             String body = new String(req, "UTF-8");
-            System.out.println("Now is : " + body);
+            System.out.println(body);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+
     }
 
     @Override
@@ -47,4 +52,6 @@ public class ClientHandler extends ChannelHandlerAdapter {
         logger.warning("Unexpected exception from downstream : " + cause.getMessage());
         ctx.close();
     }
+
+
 }

@@ -26,7 +26,7 @@ public class Main {
         logger.error("This is error message.");
 
         // 启动按键命令处理
-        new KeyHandler().start();
+        new KeyHandler(null).start();
         // 启动服务器
         new Server().bind(port, new TimeServerHandler());
     }
