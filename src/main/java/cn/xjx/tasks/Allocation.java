@@ -120,14 +120,12 @@ public class Allocation {
             for (int i = 0; i < robotSize; i++) {
                 Robot robotTemp = robotIter.next();
                 //1.1 机器人任务链表的最后一个任务，接尾法
-                // TODO 到底是取链表的头还是尾？？
                 LinkedList<Task> robotTasks = robotTemp.getRobotTasks();
                 Node taskStartNodeR, taskEndNodeR;
                 boolean isMoveR;
 
                 //1.2机器人的任务链表上有任务时，用机器人的任务链表的末端任务计算
                 if(!robotTasks.isEmpty()) {
-                    // TODO 到底是取链表的头还是尾？？
                     taskStartNodeR = robotTasks.getLast().getTaskStart();
                     taskEndNodeR   = robotTasks.getLast().getTaskEnd();
                     isMoveR        = robotTasks.getLast().isMoveLocation();
@@ -167,13 +165,13 @@ public class Allocation {
             }
 
             //2.开始竞标计算,获得分配的任务编号及对应机器人的编号
-            double temprice = price[0][0];
+            double tempPrice = price[0][0];
             int robotNum = 0;
             int taskNum  = 0;
             for(int i = 0; i < robotSize; i++) {
                 for(int j = 0; j < unallocatTaskSize; j++) {
-                    if(temprice > price[i][j]) {
-                        temprice = price[i][j];
+                    if(tempPrice > price[i][j]) {
+                        tempPrice = price[i][j];
                         robotNum = i;
                         taskNum  = j;
                     }
@@ -182,13 +180,12 @@ public class Allocation {
             System.out.println("robotNum=" + robotNum + "  taskNum=" + taskNum);
 
             //3.1 将刚才分配的任务添加到对应的机器人任务链表
-            // TODO 到底是取链表的头还是尾？？
             Iterator<Task> taskIter = unAllocTasks.iterator();
             while(taskNum-- != 0) {taskIter.next();}
             Task newTask = taskIter.next();
             robotIter = robots.iterator();
             while(robotNum-- != 0) {robotIter.next();}
-            // TODO push_back = push 从链表后面加
+            // push_back = push 从链表后面加
             Robot robotTemp = robotIter.next();
             robotTemp.getRobotTasks().add(newTask);
 
@@ -199,7 +196,6 @@ public class Allocation {
             if(robotTemp.getRobotTasks().isEmpty()) {
                 backTaskEnd = robotTemp.getRobotCoord();
             } else {
-                // TODO 啥意思？
                 //Task backTask = *(--(robotIter->robotTasks.end()));
                 Task backTask = robotTemp.getRobotTasks().getLast();
                 backTaskEnd   = backTask.getTaskEnd();
@@ -222,11 +218,10 @@ public class Allocation {
                     newPriceD   = selfPriceD+relatPriceD;
                 }
             }
-            // TODO 测试使用迭代器添加是否成功
+
             robotTemp.setTasksPriceD(robotTemp.getTasksPriceD() + newPriceD);
 
             //3.2将刚才分配的任务从未分配任务链表中删除
-            // TODO 测试remove迭代器是否成功
             unAllocTasks.remove(newTask);
 
             System.out.println();
@@ -236,7 +231,7 @@ public class Allocation {
         System.out.println();
     }
 
-    void displayResult() {
+    public void displayResult() {
         System.out.println("The allocation result are:");
 
         Iterator<Robot> robotIter = robots.iterator();
@@ -277,7 +272,7 @@ public class Allocation {
     }
 
     public static void main(String[] args) {
-        Allocation allocation = new Allocation(3, 3,3);
+        Allocation allocation = new Allocation(2, 3,3);
         allocation.allocTask();
         allocation.displayResult();
     }

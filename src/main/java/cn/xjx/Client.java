@@ -45,9 +45,10 @@ public class Client {
 //        if (args != null && args.length > 0) {
 //            port = Integer.valueOf(args[0]);
 //        }
-        String serverIp = "219.223.240.87";
+        String serverIp1 = "219.223.240.87";
+        String serverIp2 = "192.168.1.109";
         String localHost = "127.0.0.1";
 
-        new Client().connect(port, serverIp);
+        new Client().connect(port, serverIp2);
     }
 }

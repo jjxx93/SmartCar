@@ -25,9 +25,12 @@ public class Main {
         // 记录error级别的信息
         logger.error("This is error message.");
 
-        // 启动按键命令处理
-        new KeyHandler(null).start();
+        RobotServerHandler robotServerHandler = new RobotServerHandler();
+
+        // 启动按键命令处理线程
+        new ServerKeyHandler(RobotServerHandler.channels).start();
+
         // 启动服务器
-        new Server().bind(port, new TimeServerHandler());
+        new Server().bind(port, robotServerHandler);
     }
 }

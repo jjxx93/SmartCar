@@ -65,7 +65,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>cn.xjx.Main</mainClass>     <!--指定Main函数-->
+                            <mainClass>cn.xjx.Main</mainClass>     <!--指定Main函数所在类-->
                         </manifest>
                     </archive>
                 </configuration>

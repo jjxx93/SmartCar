@@ -2,12 +2,8 @@ package cn.xjx;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
-import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /**
@@ -23,10 +19,9 @@ public class KeyHandler extends Thread{
 
     @Override
     public void run() {
-        try (BufferedReader in = new BufferedReader(new InputStreamReader(System.in))){
-
-            while (true) {
-                String msg = in.readLine();
+        try (Scanner scanner = new Scanner(System.in)){
+            while (scanner.hasNext()) {
+                String msg = scanner.nextLine();
 
                 if (msg.equals("e")) {
                     if (ctx != null) {
@@ -44,9 +39,6 @@ public class KeyHandler extends Thread{
                     ctx.writeAndFlush(message);
                 }
             }
-
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 }

@@ -1,7 +1,6 @@
 package cn.xjx.tasks;
 
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * Created by jiax on 2017/1/2.
