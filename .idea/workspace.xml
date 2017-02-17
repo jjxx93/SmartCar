@@ -1,33 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="506dae6b-1f7b-4e8d-ab6c-f580598af36e" name="Default" comment="2.16 分配任务给每个客户端">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/xjx/RobotChannel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/car-jar-with-dependencies.jar" afterPath="$PROJECT_DIR$/target/car-jar-with-dependencies.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/car.jar" afterPath="$PROJECT_DIR$/target/car.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/xjx/KeyHandler.class" afterPath="$PROJECT_DIR$/target/classes/cn/xjx/KeyHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/xjx/tasks/Allocation.class" afterPath="$PROJECT_DIR$/target/classes/cn/xjx/tasks/Allocation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/xjx/tasks/Task.class" afterPath="$PROJECT_DIR$/target/classes/cn/xjx/tasks/Task.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_all_5_0_0_Alpha2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_all_5_0_0_Alpha2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
+    <list default="true" id="506dae6b-1f7b-4e8d-ab6c-f580598af36e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/xjx/Client.class" afterPath="$PROJECT_DIR$/target/classes/cn/xjx/Client.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/xjx/ClientHandler.class" afterPath="$PROJECT_DIR$/target/classes/cn/xjx/ClientHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/xjx/Main.class" afterPath="$PROJECT_DIR$/target/classes/cn/xjx/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/cn/xjx/tasks/Robot.class" afterPath="$PROJECT_DIR$/target/classes/cn/xjx/tasks/Robot.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartCar.iml" afterPath="$PROJECT_DIR$/SmartCar.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/error.log" afterPath="$PROJECT_DIR$/logs/error.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/log.log" afterPath="$PROJECT_DIR$/logs/log.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/xjx/Client.java" afterPath="$PROJECT_DIR$/src/main/java/cn/xjx/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/xjx/ClientHandler.java" afterPath="$PROJECT_DIR$/src/main/java/cn/xjx/ClientHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/xjx/KeyHandler.java" afterPath="$PROJECT_DIR$/src/main/java/cn/xjx/KeyHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/xjx/RobotServerHandler.java" afterPath="$PROJECT_DIR$/src/main/java/cn/xjx/RobotServerHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/xjx/ServerKeyHandler.java" afterPath="$PROJECT_DIR$/src/main/java/cn/xjx/ServerKeyHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/xjx/tasks/Allocation.java" afterPath="$PROJECT_DIR$/src/main/java/cn/xjx/tasks/Allocation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/xjx/tasks/Node.java" afterPath="$PROJECT_DIR$/src/main/java/cn/xjx/tasks/Node.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/xjx/tasks/Robot.java" afterPath="$PROJECT_DIR$/src/main/java/cn/xjx/tasks/Robot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/xjx/tasks/Task.java" afterPath="$PROJECT_DIR$/src/main/java/cn/xjx/tasks/Task.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -80,7 +62,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RobotServerHandler.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RobotServerHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/xjx/RobotServerHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="477">
@@ -88,19 +70,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="29">
-                <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -908,7 +877,7 @@
       <workItem from="1487246490437" duration="599000" />
       <workItem from="1487257155592" duration="1228000" />
       <workItem from="1487308404698" duration="598000" />
-      <workItem from="1487315189839" duration="20109000" />
+      <workItem from="1487315189839" duration="20944000" />
     </task>
     <task id="LOCAL-00001" summary="12.9 开始">
       <created>1481290593087</created>
@@ -980,11 +949,18 @@
       <option name="project" value="LOCAL" />
       <updated>1487257187000</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="2.17 大量更新">
+      <created>1487341158057</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1487341158057</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164685000" />
+    <option name="totallyTimeSpent" value="165520000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1045,7 +1021,8 @@
     <MESSAGE value="2.14 添加处理函数" />
     <MESSAGE value="2.15 添加多客户端操作" />
     <MESSAGE value="2.16 分配任务给每个客户端" />
-    <option name="LAST_COMMIT_MESSAGE" value="2.16 分配任务给每个客户端" />
+    <MESSAGE value="2.17 大量更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="2.17 大量更新" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1326,16 +1303,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xjx/RobotServerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="54" column="79" lean-forward="false" selection-start-line="54" selection-start-column="79" selection-end-line="54" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/xjx/ServerKeyHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2840">
@@ -1358,11 +1325,21 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="29">
-            <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <first_editor relative-caret-position="435">
+            <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/xjx/RobotServerHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="54" column="79" lean-forward="false" selection-start-line="54" selection-start-column="79" selection-end-line="54" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
