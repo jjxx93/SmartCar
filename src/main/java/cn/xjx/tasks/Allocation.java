@@ -106,6 +106,15 @@ public class Allocation {
         }
     }
 
+    public Allocation(Node inNode, Node outNode, LinkedList<Robot> robots, LinkedList<Task> unAllocTasks) {
+        this.inNode = inNode;
+        this.outNode = outNode;
+        this.robots = robots;
+        this.unAllocTasks = unAllocTasks;
+
+        this.robotSize = robots.size();
+    }
+
     public void allocTask() {
         while(!unAllocTasks.isEmpty()) {
             int unallocatTaskSize = unAllocTasks.size();
@@ -128,7 +137,7 @@ public class Allocation {
                 if(!robotTasks.isEmpty()) {
                     taskStartNodeR = robotTasks.getLast().getTaskStart();
                     taskEndNodeR   = robotTasks.getLast().getTaskEnd();
-                    isMoveR        = robotTasks.getLast().isMoveLocation();
+                    isMoveR        = robotTasks.getLast().isMove();
                 } else {    //1.3当机器人的任务链表为空时，用机器人的位置坐标计算
                     taskStartNodeR = robotTemp.getRobotCoord();
                     taskEndNodeR   = taskStartNodeR;
@@ -142,7 +151,7 @@ public class Allocation {
                     // 1.3.1计算新任务出价标值
                     Node taskStartNode = taskTemp.getTaskStart();
                     Node taskEndNode   = taskTemp.getTaskEnd();
-                    boolean isMove     = taskTemp.isMoveLocation();
+                    boolean isMove     = taskTemp.isMove();
 
                     //1.3.2如果新任务是移库任务，自身代价保持原值
                     double selfPriceD, relatedPriceD, priceD, priceT;
@@ -203,7 +212,7 @@ public class Allocation {
 
             Node newTaskStart = newTask.getTaskStart();
             Node newTaskEnd   = newTask.getTaskEnd();
-            if(newTask.isMoveLocation()) {  //3.2.1移库任务
+            if(newTask.isMove()) {  //3.2.1移库任务
                 selfPriceD  = Math.abs(newTaskEnd.x-newTaskStart.x)+Math.abs(newTaskEnd.y-newTaskStart.y);
                 relatPriceD = Math.abs(newTaskStart.x-backTaskEnd.x)+Math.abs(newTaskStart.y-backTaskEnd.y);
                 newPriceD   = selfPriceD+relatPriceD;
@@ -250,7 +259,7 @@ public class Allocation {
                 Task taskTemp = taskIter.next();
                 Node taskStartNode = taskTemp.getTaskStart();
                 Node taskEndNode = taskTemp.getTaskEnd();
-                System.out.println("    " + taskTemp.getTaskNum() + "[isMove:" + taskTemp.isMoveLocation() +
+                System.out.println("    " + taskTemp.getTaskNum() + "[isMove:" + taskTemp.isMove() +
                         ",isOut:" + taskTemp.isOut() + ",startNode(" + taskStartNode.getX() + "," +
                         taskStartNode.getY() + "),EndNode(" + taskEndNode.getX() + "," + taskEndNode.getY() + ")]; ");
             }
@@ -272,7 +281,51 @@ public class Allocation {
     }
 
     public static void main(String[] args) {
-        Allocation allocation = new Allocation(2, 3,3);
+//        Allocation allocation = new Allocation(2, 3,3);
+//        allocation.allocTask();
+//        allocation.displayResult();
+
+        // 1.初始化出入库位置
+        int MAX_XY = 1000;
+        Node inNode  = new Node(0,MAX_XY/2);
+        Node outNode = new Node(MAX_XY,MAX_XY/2);
+
+        // 2.初始化机器人链表
+        int robotSize = 1;
+        double[] xy = {75, 80, 850, 900};
+        LinkedList<Robot> robots = new LinkedList<>();
+        for(int i = 1; i <= robotSize; i++) {
+            double x = xy[1], y = xy[2];
+            System.out.println("x=" + x + " y=" + y);
+            Node robotC = new Node(x, y);
+            Robot newRobot = new Robot(i, robotC);     //初始化每个机器人编号及坐标
+            robots.add(newRobot);
+        }
+
+        // 3.初始化待分配的任务链表
+        LinkedList<Task> unAllocTasks = new LinkedList<>();
+        int taskNo = 0;
+        Node taskStart = new Node(500,600);
+        Node taskEnd   = new Node(600,500);
+        Task newTask = new Task(taskNo++, taskStart, taskEnd, true, false);
+        unAllocTasks.add(newTask);
+
+        newTask = new Task(taskNo++, taskStart, taskStart, false, false);
+        unAllocTasks.add(newTask);
+
+        newTask = new Task(taskNo++, taskStart, taskEnd, true, false);
+        unAllocTasks.add(newTask);
+
+        newTask = new Task(taskNo++, taskStart, taskEnd, true, false);
+        unAllocTasks.add(newTask);
+
+        newTask = new Task(taskNo++, taskStart, taskStart, false, false);
+        unAllocTasks.add(newTask);
+
+        newTask = new Task(taskNo++, taskStart, taskStart, false, false);
+        unAllocTasks.add(newTask);
+
+        Allocation allocation = new Allocation(inNode, outNode, robots, unAllocTasks);
         allocation.allocTask();
         allocation.displayResult();
     }

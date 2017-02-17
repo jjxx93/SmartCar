@@ -49,6 +49,6 @@ public class Client {
         String serverIp2 = "192.168.1.109";
         String localHost = "127.0.0.1";
 
-        new Client().connect(port, serverIp2);
+        new Client().connect(port, localHost);
     }
 }

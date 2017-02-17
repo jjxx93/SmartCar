@@ -1,5 +1,9 @@
 package cn.xjx;
 
+import cn.xjx.tasks.Node;
+import cn.xjx.tasks.Robot;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.Channel;
@@ -12,6 +16,9 @@ import io.netty.util.concurrent.GlobalEventExecutor;
 
 import java.io.UnsupportedEncodingException;
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * 机器人服务处理类
@@ -20,23 +27,42 @@ import java.time.LocalDateTime;
 @ChannelHandler.Sharable
 public class RobotServerHandler extends ChannelHandlerAdapter {
     // 记录当前channel
-    public static ChannelGroup channels = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
+//    public static ChannelGroup channels = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
+
+    public static Map<Channel, Robot> channels = new HashMap<>();
 
     // 接收到客户端信息后的处理函数
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-
         ByteBuf buf = (ByteBuf)msg;
         byte[] req = new byte[buf.readableBytes()];
         buf.readBytes(req);
         try {
-            String body = new String(req, "UTF-8");
-            System.out.println("Receive order:" + body);
+            String message = new String(req, "UTF-8");
+            System.out.println(message);
 
-            String replyMessage = "[IP" + ctx.channel().remoteAddress() + "]: ";
-            replyMessage += "Time".equalsIgnoreCase(body)? LocalDateTime.now().toString():"BAD ORDER";
+            String response = "";
+            switch (message.charAt(0)) {
+                case 't' : {
+                    System.out.println("Receive time order!");
+                    response = LocalDateTime.now().toString();
+                    break;
+                }
+                case 'p' : {
+                    String[] strings = message.split(" ");
+                    System.out.println("Receive position!");
+                    // 获得位置x、y
+                    Node position = new Node(Double.valueOf(strings[1]), Double.valueOf(strings[2]));
+                    channels.get(ctx.channel()).setRobotCoord(position);
+                    System.out.println("Robot position is " + channels.get(ctx.channel()).getRobotCoord());
+                    break;
+                }
+                default: {
+                    break;
+                }
+            }
 
-            ByteBuf resp = Unpooled.copiedBuffer(replyMessage.getBytes());
+            ByteBuf resp = Unpooled.copiedBuffer(response.getBytes());
             ctx.write(resp);            // 把待发送的消息放到发送缓冲数组中
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
@@ -64,10 +90,13 @@ public class RobotServerHandler extends ChannelHandlerAdapter {
         super.handlerAdded(ctx);
 
         // 添加channel
-        channels.add(ctx.channel());
 
-        System.out.println(ctx.name() + "已连接");
-        System.out.println("The client`s IP is " + ctx.channel().remoteAddress());
+        String ctxName = ctx.name();
+        int robotNo = ctxName.charAt(ctxName.length()-1) - 48;  // 获取ctx编号
+        Robot robot = new Robot(robotNo, null);
+        channels.put(ctx.channel(), robot);
+
+        System.out.println("Connect_____" + ctx.name() + ctx.channel().remoteAddress());
     }
 
     @Override
@@ -77,7 +106,6 @@ public class RobotServerHandler extends ChannelHandlerAdapter {
         // 移除channel
         channels.remove(ctx.channel());
 
-        System.out.println(ctx.name() + "已断开");
-        System.out.println("The client`s IP is " + ctx.channel().remoteAddress());
+        System.out.println("Disconnect_____" + ctx.name() + ctx.channel().remoteAddress());
     }
 }

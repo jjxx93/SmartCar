@@ -12,13 +12,10 @@ public class Robot {
     private double tasksPriceD;     //任务链表的总路程代价
     private Task tasking;           //机器人正在执行的任务
 
-    public Robot(){}
-
-    public Robot(int robotN,Node robotC) {
-        robotNum = robotN;
-        robotCoord = robotC;
-        tasksPriceD = 0;
-        robotTasks = new LinkedList<>();    // 使用链表实现数组
+    public Robot(int robotNum, Node robotC) {
+        this.robotNum = robotNum;
+        this.robotCoord = robotC;
+        this.robotTasks = new LinkedList<>();    // 使用链表实现数组
     }
 
     /**

@@ -1,5 +1,6 @@
 package cn.xjx;
 
+import com.alibaba.fastjson.JSONObject;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
@@ -23,21 +24,24 @@ public class KeyHandler extends Thread{
             while (scanner.hasNext()) {
                 String msg = scanner.nextLine();
 
-                if (msg.equals("e")) {
-                    if (ctx != null) {
+                String response = "";
+
+                switch (msg.charAt(0)) {
+                    // 退出程序命令
+                    case 'e': {
                         ctx.channel().close();
                         ctx.close();
+                        System.exit(0);
                     }
 
-                    System.exit(0);
+                    default: {
+                        response = msg;
+                        break;
+                    }
                 }
 
-                if (ctx != null) {
-                    byte[] req1 = msg.getBytes();
-                    ByteBuf message = Unpooled.buffer(req1.length);
-                    message.writeBytes(req1);
-                    ctx.writeAndFlush(message);
-                }
+                ByteBuf resp = Unpooled.copiedBuffer(response.getBytes());
+                ctx.writeAndFlush(resp);
             }
         }
     }

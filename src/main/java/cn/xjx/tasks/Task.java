@@ -7,15 +7,23 @@ public class Task {
     private int taskNum;//任务编号
     private Node taskStart;//任务起点
     private Node taskEnd;//任务终点（针对移库任务）,如果是出入库任务，起点和终点相等,方便计算
-    private boolean isMoveLocation;//是否是移库任务,默认为0出入库任务
-    private boolean isOut;//是否是出库任务，0表示入库，1表示出库
+    private boolean move;//是否是移库任务,默认为0出入库任务
+    private boolean out;//是否是出库任务，0表示入库，1表示出库
 
     public Task() {}
 
-    public Task(Node start,Node end, boolean isMove) {
-        taskStart = start;
-        taskEnd = end;
-        isMoveLocation = isMove;
+    public Task(Node start, Node end, boolean isMove) {
+        this.taskStart = start;
+        this.taskEnd = end;
+        this.move = isMove;
+    }
+
+    public Task(int taskNum, Node taskStart, Node taskEnd, boolean move, boolean out) {
+        this.taskNum = taskNum;
+        this.taskStart = taskStart;
+        this.taskEnd = taskEnd;
+        this.move = move;
+        this.out = out;
     }
 
     public int getTaskNum() {
@@ -42,20 +50,20 @@ public class Task {
         this.taskEnd = taskEnd;
     }
 
-    public boolean isMoveLocation() {
-        return isMoveLocation;
+    public boolean isMove() {
+        return move;
     }
 
-    public void setMoveLocation(boolean moveLocation) {
-        isMoveLocation = moveLocation;
+    public void setMove(boolean move) {
+        this.move = move;
     }
 
     public boolean isOut() {
-        return isOut;
+        return out;
     }
 
     public void setOut(boolean out) {
-        isOut = out;
+        this.out = out;
     }
 
     @Override
@@ -64,8 +72,8 @@ public class Task {
                 "taskNum=" + taskNum +
                 ", taskStart=" + taskStart +
                 ", taskEnd=" + taskEnd +
-                ", isMoveLocation=" + isMoveLocation +
-                ", isOut=" + isOut +
+                ", move=" + move +
+                ", out=" + out +
                 '}';
     }
 }

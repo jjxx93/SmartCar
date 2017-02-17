@@ -1,5 +1,7 @@
 package cn.xjx;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFuture;
@@ -17,18 +19,12 @@ import java.util.logging.Logger;
 public class ClientHandler extends ChannelHandlerAdapter {
     private static final Logger logger = Logger.getLogger(ClientHandler.class.getName());
 
-    private final ByteBuf firstMessage;
-
-    public ClientHandler() {
-        byte[] req = "Time".getBytes();
-        firstMessage = Unpooled.buffer(req.length);
-        firstMessage.writeBytes(req);
-    }
-
     //    客户端和服务端TCP链路建立成功后，调用channelActive方法
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
-        ChannelFuture f = ctx.writeAndFlush(firstMessage);
+        ByteBuf resp = Unpooled.copiedBuffer("t".getBytes());
+
+        ctx.writeAndFlush(resp);
         new KeyHandler(ctx).start();    // 启动按键处理线程
     }
 
@@ -38,13 +34,21 @@ public class ClientHandler extends ChannelHandlerAdapter {
         ByteBuf buf = (ByteBuf)msg;
         byte[] req = new byte[buf.readableBytes()];
         buf.readBytes(req);             // 读取返回信息
+
         try {
-            String body = new String(req, "UTF-8");
-            System.out.println(body);
+            String message = new String(req, "UTF-8");
+
+            System.out.println(message);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
 
+    }
+
+    @Override
+    public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
+        super.channelReadComplete(ctx);
+//        System.out.println("Read Complete!");
     }
 
     @Override
