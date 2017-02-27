@@ -1,11 +1,12 @@
-package cn.xjx;
+package netty;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import netty.TimeServerHandler;
+import io.netty.handler.codec.LineBasedFrameDecoder;
+import io.netty.handler.codec.string.StringDecoder;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
@@ -38,11 +39,13 @@ public class Server {
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
+                            socketChannel.pipeline().addLast(new LineBasedFrameDecoder(1024));
+                            socketChannel.pipeline().addLast(new StringDecoder());
                             socketChannel.pipeline().addLast(channelHandlerAdapter);
                         }
                     })                                          // 绑定IO事件处理类
-                    .option(ChannelOption.SO_BACKLOG, 1024)
-                    .option(ChannelOption.TCP_NODELAY, true)   //通过NoDelay禁用Nagle,使消息立即发出去，不用等待到一定的数据量才发出去
+                    .option(ChannelOption.SO_BACKLOG, 1024)     // 等待接受连接和以接受连接最多是1024个
+                    .option(ChannelOption.TCP_NODELAY, true)   //通过NoDelay,使消息立即发出去，不用等待到一定的数据量才发出去
                     .childOption(ChannelOption.SO_KEEPALIVE, true);     //保持长连接状态
 //            绑定端口，同步等待成功
             ChannelFuture f = b.bind(port).sync();              // 绑定并启用监听端口，用于异步操作的通知回调
@@ -56,11 +59,13 @@ public class Server {
         }
     }
 
+    public static void main(String[] args) {
+        TimeServerHandler timeServerHandler = new TimeServerHandler();
 
-    private class ChildChannelHandler extends ChannelInitializer<SocketChannel> {
-        @Override
-        protected void initChannel(SocketChannel socketChannel) throws Exception {
-            socketChannel.pipeline().addLast(new RobotServerHandler());
-        }
+        // 启动按键命令处理线程
+        //new ServerKeyHandler(RobotServerHandler.channels).start();
+
+        // 启动服务器
+        new Server().bind(8090, timeServerHandler);
     }
 }

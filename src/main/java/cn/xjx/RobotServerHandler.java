@@ -39,32 +39,41 @@ public class RobotServerHandler extends ChannelHandlerAdapter {
         buf.readBytes(req);
         try {
             String message = new String(req, "UTF-8");
+            System.out.print(LocalDateTime.now() + "--" + ctx.name() + ": ");
             System.out.println(message);
 
             String response = "";
             switch (message.charAt(0)) {
-                case 't' : {
-                    System.out.println("Receive time order!");
+                case 't' : {            // 获取时间指令
                     response = LocalDateTime.now().toString();
                     break;
                 }
-                case 'p' : {
+                case 'p' : {            // 报告坐标指令
                     String[] strings = message.split(" ");
-                    System.out.println("Receive position!");
                     // 获得位置x、y
+                    if (strings[2].endsWith("\n")) {    // 去掉\n
+                        strings[2] = strings[2].substring(0, strings[2].length()-1);
+                    }
                     Node position = new Node(Double.valueOf(strings[1]), Double.valueOf(strings[2]));
                     channels.get(ctx.channel()).setRobotCoord(position);
+
+                    System.out.print(LocalDateTime.now() + "--" + ctx.name() + ": ");
                     System.out.println("Robot position is " + channels.get(ctx.channel()).getRobotCoord());
                     break;
                 }
-                default: {
+                case 's' : {            // 获取测试数据指令
+                    response = "[3|0 5 1|1 2 1 5 4|0 2 1]";
+                    break;
+                }
+                default: {              // 错误指令
+                    response = "Error command, " + message;
                     break;
                 }
             }
 
             ByteBuf resp = Unpooled.copiedBuffer(response.getBytes());
             ctx.write(resp);            // 把待发送的消息放到发送缓冲数组中
-        } catch (UnsupportedEncodingException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -79,9 +88,12 @@ public class RobotServerHandler extends ChannelHandlerAdapter {
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         Channel incoming = ctx.channel();
+        System.out.print(LocalDateTime.now() + "--" + ctx.name() + ": ");
         System.out.println("SimpleChatClient:"+incoming.remoteAddress()+"异常");
         // 当出现异常就关闭连接
         cause.printStackTrace();
+        // 移除channel
+        channels.remove(ctx.channel());
         ctx.close();
     }
 
@@ -96,7 +108,8 @@ public class RobotServerHandler extends ChannelHandlerAdapter {
         Robot robot = new Robot(robotNo, null);
         channels.put(ctx.channel(), robot);
 
-        System.out.println("Connect_____" + ctx.name() + ctx.channel().remoteAddress());
+        System.out.print(LocalDateTime.now() + "--" + ctx.name() + ": ");
+        System.out.println(ctx.channel().remoteAddress() + " Connect!!!");
     }
 
     @Override
@@ -106,6 +119,7 @@ public class RobotServerHandler extends ChannelHandlerAdapter {
         // 移除channel
         channels.remove(ctx.channel());
 
-        System.out.println("Disconnect_____" + ctx.name() + ctx.channel().remoteAddress());
+        System.out.print(LocalDateTime.now() + "--" + ctx.name() + ": ");
+        System.out.println(ctx.channel().remoteAddress() + " Disconnect!!!");
     }
 }

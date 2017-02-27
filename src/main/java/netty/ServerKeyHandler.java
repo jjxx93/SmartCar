@@ -1,4 +1,4 @@
-package cn.xjx;
+package netty;
 
 import cn.xjx.tasks.Allocation;
 import cn.xjx.tasks.Node;
@@ -7,7 +7,6 @@ import cn.xjx.tasks.Task;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.Channel;
-import io.netty.channel.group.ChannelGroup;
 
 import java.util.LinkedList;
 import java.util.Map;

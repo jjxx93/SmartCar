@@ -1,4 +1,4 @@
-package cn.xjx;
+package netty;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -17,15 +17,18 @@ import java.time.LocalDateTime;
 @ChannelHandler.Sharable
 public class TimeServerHandler extends ChannelHandlerAdapter{
 
+    private int counter;
+
     // 接收到客户端信息后的处理函数
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 
-        ByteBuf buf = (ByteBuf)msg;
-        byte[] req = new byte[buf.readableBytes()];
-        buf.readBytes(req);
-        try {
-            String body = new String(req, "UTF-8");
+        String body = (String)msg;
+//        byte[] req = new byte[buf.readableBytes()];
+//        buf.readBytes(req);
+//
+//            String body = new String(req, "UTF-8");
+            System.out.println("Receive " + ++counter + " orders");
             System.out.println("Receive order:" + body);
 
             String replyMessage = "[IP" + ctx.channel().remoteAddress() + "]: ";
@@ -34,9 +37,7 @@ public class TimeServerHandler extends ChannelHandlerAdapter{
 
             ByteBuf resp = Unpooled.copiedBuffer(replyMessage.getBytes());
             ctx.write(resp);            // 把待发送的消息放到发送缓冲数组中
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+
     }
 
      // 客户端消息读取完毕，channelRead()执行完成
