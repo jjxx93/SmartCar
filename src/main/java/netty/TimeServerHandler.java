@@ -21,22 +21,16 @@ public class TimeServerHandler extends ChannelHandlerAdapter{
     // 接收到客户端信息后的处理函数
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-
         String body = (String)msg;
-//        byte[] req = new byte[buf.readableBytes()];
-//        buf.readBytes(req);
-//
-//            String body = new String(req, "UTF-8");
-            System.out.println("Receive " + ++counter + " orders");
-            System.out.println("Receive order:" + body);
 
-            String replyMessage = "[IP" + ctx.channel().remoteAddress() + "]: ";
-            replyMessage += "Time".equalsIgnoreCase(body)? new Date() : "BAD ORDER";
-            replyMessage += "\n";
+        System.out.println("Receive " + ++counter + " orders: " + body);
 
-            ByteBuf resp = Unpooled.copiedBuffer(replyMessage.getBytes());
-            ctx.write(resp);            // 把待发送的消息放到发送缓冲数组中
+        String replyMessage = "[IP" + ctx.channel().remoteAddress() + "]: ";
+        replyMessage += "Time".equalsIgnoreCase(body)? new Date() : "BAD ORDER";
+        replyMessage += "\n";
 
+        ByteBuf resp = Unpooled.copiedBuffer(replyMessage.getBytes());
+        ctx.write(resp);            // 把待发送的消息放到发送缓冲数组中
     }
 
      // 客户端消息读取完毕，channelRead()执行完成
@@ -49,7 +43,7 @@ public class TimeServerHandler extends ChannelHandlerAdapter{
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         Channel incoming = ctx.channel();
-        System.out.println("SimpleChatClient:"+incoming.remoteAddress()+"异常");
+        System.out.println("SimpleChatClient:" + incoming.remoteAddress() + "异常");
         // 当出现异常就关闭连接
         cause.printStackTrace();
         ctx.close();

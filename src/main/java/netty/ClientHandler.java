@@ -20,12 +20,18 @@ public class ClientHandler extends ChannelHandlerAdapter {
         String req = "Time" + System.getProperty("line.separator");
         //byte[] req = "Time".getBytes();
         ByteBuf message;
-        for (int i = 0; i < 100; i++) {
+
+        logger.info("Client: link success" + ctx.name());
+        for (int i = 0; i < 5; i++) {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                logger.warning("Client error");
+            }
             message = Unpooled.copiedBuffer(req.getBytes());
             ctx.writeAndFlush(message);
         }
 
-        System.out.println("SUCCESS");
         //new KeyHandler(ctx).start();    // 启动按键处理线程
     }
 
