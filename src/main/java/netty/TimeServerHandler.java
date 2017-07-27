@@ -7,8 +7,7 @@ import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 
-import java.io.UnsupportedEncodingException;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * 时间服务处理类
@@ -32,7 +31,7 @@ public class TimeServerHandler extends ChannelHandlerAdapter{
             System.out.println("Receive order:" + body);
 
             String replyMessage = "[IP" + ctx.channel().remoteAddress() + "]: ";
-            replyMessage += "Time".equalsIgnoreCase(body)? LocalDateTime.now().toString():"BAD ORDER";
+            replyMessage += "Time".equalsIgnoreCase(body)? new Date() : "BAD ORDER";
             replyMessage += "\n";
 
             ByteBuf resp = Unpooled.copiedBuffer(replyMessage.getBytes());

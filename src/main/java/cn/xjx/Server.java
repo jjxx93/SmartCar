@@ -26,7 +26,7 @@ public class Server {
      * @param port 监听端口
      * @param channelHandlerAdapter 服务处理类
      */
-    public void bind (int port, ChannelHandlerAdapter channelHandlerAdapter) {
+    public void bind (int port, final ChannelHandlerAdapter channelHandlerAdapter) {
 //        配置服务端的NIO线程组
         EventLoopGroup bossGroup = new NioEventLoopGroup();     // 用于接受客户端连接
         EventLoopGroup workerGroup = new NioEventLoopGroup();   // 用于进行SocketChannel的网络读写

@@ -2,23 +2,16 @@ package cn.xjx;
 
 import cn.xjx.tasks.Node;
 import cn.xjx.tasks.Robot;
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.group.ChannelGroup;
-import io.netty.channel.group.DefaultChannelGroup;
-import io.netty.util.concurrent.GlobalEventExecutor;
 
-import java.io.UnsupportedEncodingException;
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * 机器人服务处理类
@@ -39,13 +32,13 @@ public class RobotServerHandler extends ChannelHandlerAdapter {
         buf.readBytes(req);
         try {
             String message = new String(req, "UTF-8");
-            System.out.print(LocalDateTime.now() + "--" + ctx.name() + ": ");
+            System.out.print(new Date() + "--" + ctx.name() + ": ");
             System.out.println(message);
 
             String response = "";
             switch (message.charAt(0)) {
                 case 't' : {            // 获取时间指令
-                    response = LocalDateTime.now().toString();
+                    response = new Date().toString();
                     break;
                 }
                 case 'p' : {            // 报告坐标指令
@@ -57,7 +50,7 @@ public class RobotServerHandler extends ChannelHandlerAdapter {
                     Node position = new Node(Double.valueOf(strings[1]), Double.valueOf(strings[2]));
                     channels.get(ctx.channel()).setRobotCoord(position);
 
-                    System.out.print(LocalDateTime.now() + "--" + ctx.name() + ": ");
+                    System.out.print(new Date() + "--" + ctx.name() + ": ");
                     System.out.println("Robot position is " + channels.get(ctx.channel()).getRobotCoord());
                     break;
                 }
@@ -88,7 +81,7 @@ public class RobotServerHandler extends ChannelHandlerAdapter {
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         Channel incoming = ctx.channel();
-        System.out.print(LocalDateTime.now() + "--" + ctx.name() + ": ");
+        System.out.print(new Date() + "--" + ctx.name() + ": ");
         System.out.println("SimpleChatClient:"+incoming.remoteAddress()+"异常");
         // 当出现异常就关闭连接
         cause.printStackTrace();
@@ -108,7 +101,7 @@ public class RobotServerHandler extends ChannelHandlerAdapter {
         Robot robot = new Robot(robotNo, null);
         channels.put(ctx.channel(), robot);
 
-        System.out.print(LocalDateTime.now() + "--" + ctx.name() + ": ");
+        System.out.print(new Date() + "--" + ctx.name() + ": ");
         System.out.println(ctx.channel().remoteAddress() + " Connect!!!");
     }
 
@@ -119,7 +112,7 @@ public class RobotServerHandler extends ChannelHandlerAdapter {
         // 移除channel
         channels.remove(ctx.channel());
 
-        System.out.print(LocalDateTime.now() + "--" + ctx.name() + ": ");
+        System.out.print(new Date() + "--" + ctx.name() + ": ");
         System.out.println(ctx.channel().remoteAddress() + " Disconnect!!!");
     }
 }

@@ -25,9 +25,6 @@ public class ClientHandler extends ChannelHandlerAdapter {
             ctx.writeAndFlush(message);
         }
 
-//        ByteBuf resp = Unpooled.copiedBuffer("t".getBytes());
-//
-//        ctx.writeAndFlush(resp);
         System.out.println("SUCCESS");
         //new KeyHandler(ctx).start();    // 启动按键处理线程
     }
@@ -51,6 +48,4 @@ public class ClientHandler extends ChannelHandlerAdapter {
         logger.warning("Unexpected exception from downstream : " + cause.getMessage());
         ctx.close();
     }
-
-
 }
