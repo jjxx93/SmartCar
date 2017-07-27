@@ -17,7 +17,7 @@ public class ClientHandler extends ChannelHandlerAdapter {
     //    客户端和服务端TCP链路建立成功后，调用channelActive方法
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
-        String req = "Time" + System.getProperty("line.separator");
+        String req = "Time" + System.getProperty("line.separator");     // 加换行符
         //byte[] req = "Time".getBytes();
         ByteBuf message;
 

@@ -34,7 +34,7 @@ public class Server {
         try {
             ServerBootstrap b = new ServerBootstrap();          // Socket服务端的辅助启动类
             b.group(bossGroup, workerGroup)                     // 绑定线程池
-                    .channel(NioServerSocketChannel.class)      // 绑定channel
+                    .channel(NioServerSocketChannel.class)      // 绑定ServerSocketChannel
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
@@ -43,8 +43,8 @@ public class Server {
                             socketChannel.pipeline().addLast(channelHandlerAdapter);
                         }
                     })                                          // 绑定IO事件处理类
-                    .option(ChannelOption.SO_BACKLOG, 1024)     // 等待接受连接和以接受连接最多是1024个
-                    .option(ChannelOption.TCP_NODELAY, true)   //通过NoDelay,使消息立即发出去，不用等待到一定的数据量才发出去
+                    .option(ChannelOption.SO_BACKLOG, 1024)    // 等待接受连接和以接受连接最多是1024个
+                    .option(ChannelOption.TCP_NODELAY, true)   // 通过NoDelay,使消息立即发出去，不用等待到一定的数据量才发出去
                     .childOption(ChannelOption.SO_KEEPALIVE, true);     //保持长连接状态
 //            绑定端口，同步等待成功
             ChannelFuture f = b.bind(port).sync();              // 绑定并启用监听端口，用于异步操作的通知回调
